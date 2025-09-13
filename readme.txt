@@ -11,8 +11,8 @@ IOPORT(RW) 0x18    $2140(ADDR0)
 IOPORT(RW) 0x19    $2141(ADDR1)
 IOPORT(RW) 0x1a    $2142(ADDR2)
 IOPORT(RW) 0x1b    $2143(ADDR3)
-IOPORT(R)  0x1c    リセット(0x1cを読むとSPC700にリセットがかかります)
-IOPORT(R)  0x1d, 0x1e, 0x1fは0x1cのミラー
+IOPORT(W)  0x1c    リセット(0x1cに任意の値を書くとSPC700にリセットがかかります)
+IOPORT(W)  0x1d, 0x1e, 0x1fは0x1cのミラー
 
 回路図の他、デモ・サンプルとしてWindowsPCからMeSX(MSX)へspcファイルを転送、再生する為のコマンドツールとROMも用意しました。別途、ここにあるspc700.uf2ファームウェアを書込みしたMSXπTypeAが必要です。
 

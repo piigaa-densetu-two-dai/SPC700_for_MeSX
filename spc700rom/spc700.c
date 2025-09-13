@@ -74,7 +74,7 @@ static void doit(void)
 
 	printf("\x0cSPC700:");
 
-	(void)SPC700_RESET;
+	SPC700_RESET = 0;
 __asm
 	ei
 	halt
@@ -101,7 +101,7 @@ __endasm;
 			i8251_send(inp(0x18 | (data & 0b11)));
 			break;
 		case 0b11: /* RESET */
-			(void)SPC700_RESET;
+			SPC700_RESET = 0;
 			break;
 		}
 	}
